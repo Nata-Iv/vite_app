@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
-import { QueryKey } from "../utils/enums";
-import { IPost } from "../utils/interfaces";
-import { getPosts } from "../queryFunctions/posts";
+import { QueryKey } from "./enums";
+import { IPost } from "../interfaces/posts";
+import { getPosts } from "./posts";
 
 export const usePosts = () => {
   return useQuery<[IPost], Error>({
