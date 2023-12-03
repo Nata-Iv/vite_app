@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { QueryKey } from "./enums";
-import { IPost } from "../interfaces/posts";
+import { QueryKey } from "../shared/enums";
+import { IPost } from "../shared/interfaces";
 import { getPosts } from "./posts";
 
 export const usePosts = () => {

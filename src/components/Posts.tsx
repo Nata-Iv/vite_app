@@ -1,6 +1,6 @@
 import { usePosts } from "../hooks/usePosts";
 import { StyledLink } from "../styles/styledComponents";
-import { Statuses } from "../statuses";
+import { Statuses } from "../shared/statuses";
 
 const Posts = () => {
   const { status, data, error, isFetching } = usePosts();

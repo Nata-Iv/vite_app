@@ -1,7 +1,7 @@
 import Posts from "../components/Posts";
 import { StyledDiv, StylesH1 } from "../styles/styledComponents";
 
-const Home = () => {
+const PagePostsWithQuery = () => {
   return (
     <StyledDiv>
       <StylesH1>Posts</StylesH1>
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PagePostsWithQuery;
