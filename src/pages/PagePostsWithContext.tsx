@@ -1,23 +1,30 @@
-import { useEffect } from "react";
-import axios from "axios";
-import { usePosts } from "../store/hooks";
+import { usePostContext } from "../store/hooks";
+import { StyledDiv, StylesH1 } from "../styles/styledComponents";
+import { ContextComponent } from "../components/ContextComponent";
+import { someActions } from "../store/actions";
 
 const PagePostsWithContext = () => {
-  const { posts, setPosts } = usePosts();
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts?_limit=15")
-      .then((response) => setPosts(response.data));
-  }, [setPosts]);
+  const { state, dispatch } = usePostContext();
+
   return (
-    <>
-      <h1>Posts</h1>
-      {posts.map((post) => (
-        <p key={post.id}>
-          <a href="#">{post.title}</a>
-        </p>
-      ))}
-    </>
+    <StyledDiv>
+      <StylesH1>Posts with Query</StylesH1>
+      <h2>this text from page with context</h2>
+      <div>{state?.posts?.length && state.posts[0].title}</div>
+      <div>
+        increment Btn <b>{state.count}</b>
+      </div>
+      <button onClick={() => dispatch(someActions.changeCountAction(0))}>
+        +
+      </button>
+      <div>
+        decrement Btn <b>{state.decr}</b>
+      </div>
+      <button onClick={() => dispatch(someActions.changeDecrAction(0))}>
+        -
+      </button>
+      <ContextComponent />
+    </StyledDiv>
   );
 };
 

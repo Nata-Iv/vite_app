@@ -1,3 +1,5 @@
-export const enum REDUCER_ACTION_TYPE {
-  SET_POSTS,
+export enum ActionsNamesEnum {
+  CHANGE_POSTS = "CHANGE_POSTS",
+  CHANGE_COUNT = "CHANGE_COUNT",
+  CHANGE_DECR = "CHANGE_DECR",
 }

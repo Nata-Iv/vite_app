@@ -1,12 +1,20 @@
-import { REDUCER_ACTION_TYPE } from "./enums";
-import { StateType } from "./types";
-import { ReducerAction } from "./types";
+import { PostsActions, PostsState } from "./types";
+import { ActionsNamesEnum } from "./enums";
 
-export const reducer = (state: StateType, action: ReducerAction): StateType => {
-  switch (action.type) {
-    case REDUCER_ACTION_TYPE.SET_POSTS:
-      return { ...state, posts: action.payload };
+export const postsReducer = (
+  state: PostsState,
+  action: PostsActions
+): PostsState => {
+  const { type, payload } = action;
+
+  switch (type) {
+    case ActionsNamesEnum.CHANGE_POSTS:
+      return { ...state, posts: payload as [] };
+    case ActionsNamesEnum.CHANGE_COUNT:
+      return { ...state, count: state.count + 1 };
+    case ActionsNamesEnum.CHANGE_DECR:
+      return { ...state, decr: state.decr - 1 };
     default:
-      throw new Error();
+      return state;
   }
 };

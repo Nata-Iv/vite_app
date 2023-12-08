@@ -1,10 +1,14 @@
-import { StateType, UsePostsContextType } from "./types";
-
-export const initState: StateType = {
-  posts: [],
-};
-
-export const initContextState: UsePostsContextType = {
-  state: initState,
-  setPosts: () => {},
+export const initialState = {
+  posts: [
+    {
+      id: 1,
+      title: "text 12359 text",
+    },
+    {
+      id: 2,
+      title: "text 12359 text 2222",
+    },
+  ],
+  count: 0,
+  decr: 0,
 };
